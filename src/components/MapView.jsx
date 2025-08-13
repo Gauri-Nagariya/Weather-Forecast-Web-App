@@ -1,32 +1,17 @@
 // src/components/MapView.jsx
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import markerIconPng from 'leaflet/dist/images/marker-icon.png';
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 
+function ChangeView({ center }) {
+  const map = useMap();
+  React.useEffect(() => {
+    if (center) {
+      map.setView(center, 10); // zoom level 10
+    }
+  }, [center, map]);
+  return null;
+}
 
-// export default function MapView({ lat, lon, city }) {
-//   const position = [lat, lon];
-
-//   return (
-//     <div id="map">
-//     <MapContainer
-//       center={position}
-//       zoom={10}
-//       scrollWheelZoom={false}
-//       style={{ height: '100%', width: '100%' }}
-//     >
-//       <TileLayer
-//         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//         attribution='&copy; OpenStreetMap contributors'
-//       />
-//       <Marker position={position}>
-//         <Popup>{city}</Popup>
-//       </Marker>
-//     </MapContainer>
-//   </div>
-//   );
-// }
 export default function MapView({ lat, lon, city }) {
   const position = [lat, lon];
 
@@ -34,27 +19,18 @@ export default function MapView({ lat, lon, city }) {
     <div
       id="map"
       style={{
-        height: '100%',
-        width: '100%',
-        borderRadius: '20px',
-        overflow: 'hidden',
+        height: "400px",  // fixed height to ensure map shows properly
+        width: "100%",
+        borderRadius: "20px",
+        overflow: "hidden",
       }}
     >
-      <MapContainer
-        center={position}
-        zoom={10}
-        scrollWheelZoom={false}
-        style={{ height: '100%', width: '100%' }}
-      >
-        {/* <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; OpenStreetMap contributors'
-        /> */}
+      <MapContainer center={position} zoom={10} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
+        <ChangeView center={position} />
         <TileLayer
-  url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-  attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-/>
-
+          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+        />
         <Marker position={position}>
           <Popup>{city}</Popup>
         </Marker>
