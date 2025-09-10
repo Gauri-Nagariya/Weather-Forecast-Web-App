@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Weather.css";
 // import "../components/Weather.css";
 import MapView from "../components/MapView";
-import "leaflet/dist/leaflet.css";
+// import "leaflet/dist/leaflet.css";
 import { useMap } from "react-leaflet";
+import dynamic from "next/dynamic"; // if using Next.js
 
 import search_icon from "../assets/search-icon.png";
 import sunny from "../assets/sunny.png";
@@ -15,6 +16,7 @@ import wind from "../assets/wind.png";
 import sunrise from "../assets/sunrise.png";
 import sunset from "../assets/sunset.png";
 
+const MapView = dynamic(() => import("../components/MapView"), { ssr: false });
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -36,7 +38,7 @@ const Weather = () => {
   const search = async (city) => {
     try {
       // const url = `http://api.weatherapi.com/v1/current.json?key=da25e059e14642fda4d130526253107&q=${city}&aqi=yes`;
-      const url = `http://api.weatherapi.com/v1/forecast.json?key=da25e059e14642fda4d130526253107&q=${city}&days=7&aqi=no&alerts=yes`;
+      const url = `https://api.weatherapi.com/v1/forecast.json?key=da25e059e14642fda4d130526253107&q=${city}&days=7&aqi=no&alerts=yes`;
       const response = await fetch(url);
       const data = await response.json();
 
@@ -79,12 +81,12 @@ const Weather = () => {
   };
 
   useEffect(() => {
+  if (typeof window !== "undefined") {
     const storedHistory = localStorage.getItem("searchHistory");
-  if (storedHistory) {
-    setHistory(JSON.parse(storedHistory));
+    if (storedHistory) setHistory(JSON.parse(storedHistory));
   }
-    search("Canada");
-  }, []);
+  search("Canada");
+}, []);
 
   return (
     <div className="weather">
