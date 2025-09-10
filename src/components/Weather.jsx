@@ -4,7 +4,7 @@ import "./Weather.css";
 import MapView from "../components/MapView";
 // import "leaflet/dist/leaflet.css";
 import { useMap } from "react-leaflet";
-import dynamic from "next/dynamic"; // if using Next.js
+// import dynamic from "next/dynamic"; // if using Next.js
 
 import search_icon from "../assets/search-icon.png";
 import sunny from "../assets/sunny.png";
@@ -16,7 +16,7 @@ import wind from "../assets/wind.png";
 import sunrise from "../assets/sunrise.png";
 import sunset from "../assets/sunset.png";
 
-const MapView = dynamic(() => import("../components/MapView"), { ssr: false });
+// const MapView = dynamic(() => import("../components/MapView"), { ssr: false });
 
 const Weather = () => {
   const [city, setCity] = useState("");
