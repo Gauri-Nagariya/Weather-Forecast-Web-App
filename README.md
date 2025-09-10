@@ -37,7 +37,7 @@
         </ul>
         <h3>Installation</h3>
         <p>1. <strong>Clone the repository:</strong></p>
-        <pre><code>git clone &lt;repository_url&gt;</code></pre>
+        <pre><code>git clone &lt;https://github.com/Gauri-Nagariya/Weather-Forecast-Web-App.git&gt;</code></pre>
         <p>2. <strong>Navigate to the project directory:</strong></p>
         <pre><code>cd weather-app</code></pre>
         <p>3. <strong>Install dependencies:</strong></p>
