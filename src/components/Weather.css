@@ -123,7 +123,8 @@
   margin-left: 6px;
   /* padding-right: 20px; */
   display: flex;
-  gap: 4px;
+  gap: 2px;
+  justify-content: space-around;
   width: 856px;
   background-color: transparent;
   overflow-x: auto;
@@ -138,6 +139,7 @@
 }
 .forecast-day {
   /* border: 2px solid red; */
+
   padding-top: 5px;
   white-space: normal;
   background-color: rgb(43, 43, 43);
