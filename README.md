@@ -9,7 +9,7 @@
             <li>Interactive maps using Leaflet.js to show location.</li>
             <li>Search history and input validation for a smooth user experience.</li>
         </ul>
-         <a href="https://weather-forecast-web-app-9kt9.vercel.app" class="live-link" target="_blank">View Live Demo</a>
+         <a href="https://weather-forecast-web-96h58y2fq-gauris-projects-0309a127.vercel.app/" class="live-link" target="_blank">View Live Demo</a>
        <hr class="section-divider">
         <h2>Technology Stack</h2>
         <p>This project is built with the following technologies:</p>
