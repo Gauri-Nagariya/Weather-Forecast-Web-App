@@ -1,110 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
-
-*{
-  transition: background-color 0.3s, color 0.3s;
-  font-family: "Poppins", sans-serif;
-  margin: 4px 4px;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgb(43, 43, 43);
-}
-
-.app{
-  min-height: 97vh;
-  display: grid;
-  background: rgb(43, 43, 43);
-}
-
-
-/* 
-:root {
-  --bg-color: rgb(43, 43, 43);
-  --text-color: rgb(196, 193, 193);
-  --card-bg: rgb(17, 16, 21);
-  --input-bg: rgb(43, 43, 43);
-}
-
-body.light-theme {
-  --bg-color: #f2f2f2;
-  --text-color: #1a1a1a;
-  --card-bg: white;
-  --input-bg: #e6e6e6;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
+  transition: background-color 0.3s, color 0.3s;
   font-family: "Poppins", sans-serif;
-  margin: 4px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
+/* Theme background is now dynamic */
 .app {
-  min-height: 97vh;
+  min-height: 100vh;
   display: grid;
-  background-color: var(--bg-color);
-} */
-
-#map {
-  background-color: rgb(17, 16, 21);
-
-  height: 300px;
-  width: 100%;
-  /* margin-top: 20px; */
-  /* border: 4px solid red; */
-  border-radius: 20px;
-  padding: 0px 0px;
-  /* padding-left: 20px; */
-  /* background-color: yellow; */
-}
-
-#map .leaflet-container {
-  border-radius: 20px;
-  /* background-color: yellow; */
-}
-
-.leaflet-control-attribution {
-  font-size: 2px;
-  /* background-color: yellow; */
-
-  color: #888;
-  background: rgb(17, 16, 21);
-  box-shadow: none;
-}
-
-
-.leaflet-control-zoom {
-  top: auto;
-  background-color: rgb(17, 16, 21);
-  bottom: 3px;
-  /* border: 2px  solid white; */
-  right: -3px;
-}
-
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out {
-  background-color: rgb(43, 43, 43) !important;
-  color: rgb(196, 193, 193)!important;
-  border: none !important;
-  /* border:  2px solid red; */
-  /* border-radius: 11px !important; */
-  width: 36px !important;
-  height: 36px !important;
-  margin: 0px -14px ;
-  font-size: 18px !important;
-  transition: background 0.2s !important;
-}
-.leaflet-control-zoom-in{
-  margin-top: -8px;
-  /* margin-bottom: -10px; */
-}
-
-.leaflet-control-zoom-out {
-margin-bottom: -8px;
-}
-
-.leaflet-control-zoom-in:hover,
-.leaflet-control-zoom-out:hover {
-  background-color: rgb(43, 43, 43) !important;
+  background-color: var(--bg);
 }
